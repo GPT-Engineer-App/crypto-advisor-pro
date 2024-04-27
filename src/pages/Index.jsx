@@ -11,9 +11,9 @@ const Index = () => {
   const handleAnalyzeData = async () => {
     setLoading(true);
     try {
-      // Simulate fetching data and analyzing it
+      // Simulate fetching data and analyzing it. Note: The buy or sell signal is randomly generated for demonstration purposes and does not reflect real financial analysis.
       setTimeout(() => {
-        const result = Math.random() > 0.5 ? "buy" : "sell"; // Randomized for demonstration
+        const result = Math.random() > 0.5 ? "buy" : "sell";
         setInvestmentAdvice(result);
         setLoading(false);
         toast({
