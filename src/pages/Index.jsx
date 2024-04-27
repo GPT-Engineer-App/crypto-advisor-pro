@@ -1,5 +1,5 @@
 // Crypto Investment Advisor Page Component
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Box, Button, Text, VStack, HStack, Input, useToast } from "@chakra-ui/react";
 import { FaBitcoin, FaArrowUp, FaArrowDown } from "react-icons/fa";
 
@@ -35,6 +35,14 @@ const Index = () => {
       });
     }
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleAnalyzeData();
+    }, 300000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <VStack spacing={8} p={5}>
